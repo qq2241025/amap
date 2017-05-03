@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>amap</title>
+	<script type="text/javascript" src="http://127.0.0.1:8020/amap/js/maps.js?v=1.3&key=c0fa7cbef7939ee6e2ce2d940e623e0b"></script>
+</head>
+<body style="margin: 0px;padding: 0px;">
+	<div style="margin: 30px;padding: 0px;width: 1000px;height:600px;" id="mapContainer"></div>
+	<script>
+	    var store = window.localStorage;
+	    for(var key in store){
+	    	delete store[key]
+	    }
+		var map = new AMap.Map("mapContainer", {
+	        resizeEnable: true,
+//	        disableVector:true,//禁用矢量图层
+	        center: [116.397428, 39.90923],
+	        zoom: 13
+	    });
+	    map.plugin(["AMap.ToolBar"], function() {
+			map.addControl(new AMap.ToolBar());
+		});
+	</script>
+</body>
+</html>

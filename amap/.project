@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ajaxUpload</name>
+	<name>amap</name>
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>com.aptana.ide.core.unifiedBuilder</name>
+			<name>com.pandora.projects.ui.MKeyBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>com.aptana.editor.php.aptanaPhpBuilder</name>
+			<name>com.aptana.ide.core.unifiedBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.pandora.projects.ui.MKeyNature</nature>
 		<nature>com.aptana.projects.webnature</nature>
-		<nature>com.aptana.editor.php.phpNature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1493108491548</id>
+			<id>1493691675746</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -37,6 +37,15 @@
 						<arguments>1.0-projectRelativePath-matches-false-false-setting</arguments>
 					</matcher>
 				</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1493707309333</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>
