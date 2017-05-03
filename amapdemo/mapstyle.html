@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>设置主题样式</title>
+    <script type="text/javascript" src="http://192.168.2.71:8888/amap/js/maps.js?v=1.3&key=c0fa7cbef7939ee6e2ce2d940e623e0b"></script>
+</head>
+<body>
+<div id="container" style="width:1000px;height:500px;"></div>
+<div class='button-group' style="background-color: #0d9bf2">
+    <input type='radio' onclick='refresh(this.value)' checked name='mapStyle' value='normal'>normal
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='blue_night'>blue_night
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='light'>light
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='fresh'>fresh
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='dark'>dark
+</div>
+<script type="text/javascript">
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        center: [116.408075, 39.950187]
+    });
+    function refresh(e) {
+        map.setMapStyle(e);
+    }
+</script>
+</body>
+</html>

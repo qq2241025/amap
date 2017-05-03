@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <style type="text/css">
+      html,body,.map{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+      }
+    </style>
+    <title>海量麻点图</title>
+  </head>
+  <body onload>
+    <div id="mapContainer" style="width:1000px;height:500px;float: left;"></div>
+    <script type="text/javascript" src = 'http://cache.amap.com/lbs/static/allCity.js'></script> 
+    <script type="text/javascript" src = 'http://192.168.2.71:8888/amap/js/maps.js?v=1.3&key=c0fa7cbef7939ee6e2ce2d940e623e0b'></script>
+    <script type="text/javascript">
+      var map = new AMap.Map('mapContainer', {
+        layers: [new AMap.TileLayer({
+          textIndex: 2
+        })],
+        zoom: 4,
+        center: [102.342785, 35.312316]
+      });
+      var mass = new AMap.MassMarks(citys, {
+          url: 'http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png',
+          anchor: new AMap.Pixel(3, 7),
+          size: new AMap.Size(5, 7),
+          opacity:0.7,
+          cursor:'pointer',
+          zIndex: 1
+      });
+      var marker = new AMap.Marker({
+        content:' ',
+        map:map
+      })
+      mass.on('mouseover',function(e){
+        marker.setPosition(e.data.lnglat);
+        marker.setLabel({content:e.data.name})
+      })
+      mass.setMap(map);
+    </script>
+
+  </body>
+  
+</html>
